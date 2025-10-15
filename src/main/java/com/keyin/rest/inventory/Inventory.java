@@ -13,6 +13,7 @@ public class Inventory {
     private long id;
 
     private String itemName;
+    private String description;
     private int quantity;
     private double price;
 
@@ -42,6 +43,14 @@ public class Inventory {
 
     public void setItemName(String itemName) {
         this.itemName = itemName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getQuantity() {

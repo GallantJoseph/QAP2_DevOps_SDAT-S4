@@ -17,6 +17,11 @@ public class InventoryController {
         return divisionService.createInventoryItem(inventory);
     }
 
+    @GetMapping("/inventory")
+    public List<Inventory> getAllInventoryItems() {
+        return divisionService.getAllInventoryItems();
+    }
+
     @GetMapping("/inventory/{id}")
     public Inventory getInventoryById(@PathVariable Long id) {
         return divisionService.getInventoryById(id);

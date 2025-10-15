@@ -14,6 +14,10 @@ public class InventoryService {
         return inventoryRepository.save(inventory);
     }
 
+    public List<Inventory> getAllInventoryItems(){
+        return (List<Inventory>) inventoryRepository.findAll();
+    }
+
     public Inventory getInventoryById(Long id) {
         return inventoryRepository.findById(id).orElse(null);
     }
@@ -26,6 +30,7 @@ public class InventoryService {
         return inventoryRepository.findById(id)
                 .map(inventory -> {
                     inventory.setItemName(updatedInventory.getItemName());
+                    inventory.setDescription(updatedInventory.getDescription());
                     inventory.setQuantity(updatedInventory.getQuantity());
                     inventory.setPrice(updatedInventory.getPrice());
                     return inventoryRepository.save(inventory);
